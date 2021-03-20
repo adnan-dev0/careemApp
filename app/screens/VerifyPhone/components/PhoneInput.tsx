@@ -14,7 +14,6 @@ import { moderateScale } from "../../../utilities"
 type PhoneInputProps = {
   countryCode: CountryCode
   onSelect: (country: Country) => void
-  ref: any
 }
 
 export const PhoneInput = forwardRef(
@@ -37,11 +36,11 @@ export const PhoneInput = forwardRef(
           selectTextOnFocus={false}
           style={styles.textInput}
           maxLength={15}
-          autoCompleteType="tel"
-          textContentType={"telephoneNumber"}
-          underlineColorAndroid={"rgba(0,0,0,0)"}
-          placeholder={"301 2345678"}
           clearButtonMode="always"
+          textContentType={"telephoneNumber"}
+          keyboardType="phone-pad"
+          underlineColorAndroid={color.transparent}
+          placeholder={"301 2345678"}
           selectionColor={color.primaryLight}
           onChangeText={setValue}
         />
