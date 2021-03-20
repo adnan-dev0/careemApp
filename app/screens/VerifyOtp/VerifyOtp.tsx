@@ -1,0 +1,55 @@
+import { RouteProp } from "@react-navigation/core"
+import React from "react"
+import { StyleSheet, View } from "react-native"
+import { useSafeAreaInsets } from "react-native-safe-area-context"
+import { AuthStackParamList } from "../../navigation/types"
+import { moderateScale } from "../../utilities"
+import { SubTitle, Title } from "../VerifyPhone/components"
+import { EditNumber } from "./components"
+
+const HEADER_HEIGHT = 80
+
+type ProfileScreenRouteProp = RouteProp<AuthStackParamList, "VerifyOtp">
+
+type Props = {
+  route: ProfileScreenRouteProp
+}
+
+export function VerifyOtp({
+  route: {
+    params: { phone },
+  },
+}: Props) {
+  const insets = useSafeAreaInsets()
+
+  return (
+    <View
+      style={[
+        styles.container,
+        {
+          paddingTop: insets.top + HEADER_HEIGHT,
+          paddingBottom: insets.bottom,
+        },
+      ]}
+    >
+      <View>
+        <Title text="Enter your code" />
+        <View style={styles.subTitleContainer}>
+          <SubTitle text={`We've sent a 4-digit code to ${phone}`} />
+          <EditNumber/>
+        </View>
+      </View>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: moderateScale(12),
+    justifyContent: "space-between",
+  },
+  subTitleContainer: {
+    flexDirection: "row",
+  },
+})
