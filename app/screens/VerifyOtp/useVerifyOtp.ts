@@ -1,8 +1,7 @@
-import { useRef } from "react"
-import { TextInput } from "react-native-gesture-handler"
+import { useAuth } from "../../context"
 
 export function useVerifyOtp() {
-    const codeInputRef = useRef<TextInput>()
+    const { login } = useAuth()
     const onEditNumber = () => {
         console.log('onEditNumber')
     }
@@ -12,8 +11,9 @@ export function useVerifyOtp() {
     const onCallMe = () => {
         console.log('onCallMe')
     }
-    const onCodeInput = () => {
-        console.log('onCodeInput')
+    const onCodeInput = (value: string) => {
+        console.log('onCodeInput', value)
+        login && login(value)
     }
-    return { onEditNumber, onResendCode, onCallMe, onCodeInput, codeInputRef }
+    return { onEditNumber, onResendCode, onCallMe, onCodeInput }
 }

@@ -1,31 +1,16 @@
-import React, { forwardRef, useImperativeHandle, useRef, useState } from "react"
+import React from "react"
 import { StyleSheet, TextInput, View } from "react-native"
 import { color } from "../../../theme"
 import { layout, moderateScale } from "../../../utilities"
 
 type Props = {
-  onCodeInput: () => void
+  onCodeInput: (value: string) => void
 }
 
-export const OtpInput = forwardRef(({ onCodeInput }: Props, ref) => {
-  const inputRef = useRef<TextInput>()
-  const [otp, setOtp] = useState("")
-
-  useImperativeHandle(ref, () => ({
-    value: (code?: string) => {
-      if (typeof code === "string") {
-        setOtp(code)
-        return
-      }
-      return otp
-    },
-  }))
-
+export const OtpInput = ({ onCodeInput }: Props) => {
   const onChangeText = (text: string) => {
-    setOtp(text)
     if (text.length === 4) {
-      inputRef.current?.blur()
-      onCodeInput()
+      onCodeInput(text)
     }
   }
 
@@ -33,7 +18,6 @@ export const OtpInput = forwardRef(({ onCodeInput }: Props, ref) => {
     <View style={styles.container}>
       <TextInput
         autoFocus
-        ref={inputRef}
         textAlign="center"
         textContentType="oneTimeCode"
         keyboardType="number-pad"
@@ -46,7 +30,7 @@ export const OtpInput = forwardRef(({ onCodeInput }: Props, ref) => {
       />
     </View>
   )
-})
+}
 
 const styles = StyleSheet.create({
   container: {

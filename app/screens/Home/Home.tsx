@@ -1,14 +1,26 @@
 import React from "react"
-import { Text, TouchableOpacity, View } from "react-native"
-import { useAuth } from "../../context"
+import { StyleSheet, View } from "react-native"
+import { useSafeAreaInsets } from "react-native-safe-area-context"
+import { color } from "../../theme"
+import { moderateScale } from "../../utilities"
+import { CardsSection, Header } from "./components"
 
 export function Home() {
-  const { logout } = useAuth()
+  const insets = useSafeAreaInsets()
   return (
-    <View>
-      <TouchableOpacity onPress={logout}>
-        <Text>Logout</Text>
-      </TouchableOpacity>
+    <View
+      style={[styles.container, { paddingTop: insets.top + moderateScale(10) }]}
+    >
+      <Header />
+      <CardsSection />
     </View>
   )
 }
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: moderateScale(12),
+    backgroundColor: color.background,
+  },
+})

@@ -12,5 +12,5 @@ export const palette = {
   chineseGreen: "#D0DB61",
   sapGreen: "#458728",
   darkGreen: "#006400",
-  blue:"#0066CC"
+  blue: "#0066CC",
 }

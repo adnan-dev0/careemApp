@@ -3,6 +3,7 @@ import React from "react"
 import { StyleSheet, View } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { AuthStackParamList } from "../../navigation/types"
+import { color } from "../../theme"
 import { moderateScale } from "../../utilities"
 import { SubTitle, Title } from "../VerifyPhone/components"
 import { EditNumber, OtpInput, Timer } from "./components"
@@ -21,13 +22,7 @@ export function VerifyOtp({
     params: { phone },
   },
 }: Props) {
-  const {
-    onEditNumber,
-    onResendCode,
-    onCallMe,
-    onCodeInput,
-    codeInputRef,
-  } = useVerifyOtp()
+  const { onEditNumber, onResendCode, onCallMe, onCodeInput } = useVerifyOtp()
   const insets = useSafeAreaInsets()
 
   return (
@@ -45,7 +40,7 @@ export function VerifyOtp({
         <SubTitle text={`We've sent a 4-digit code to ${phone}`} />
         <EditNumber onEditNumber={onEditNumber} />
       </View>
-      <OtpInput onCodeInput={onCodeInput} ref={codeInputRef} />
+      <OtpInput onCodeInput={onCodeInput} />
       <View
         style={[styles.subTitleContainer, { justifyContent: "space-between" }]}
       >
@@ -60,6 +55,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: moderateScale(12),
+    backgroundColor: color.background,
   },
   subTitleContainer: {
     flexDirection: "row",
