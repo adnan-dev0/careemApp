@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Text, View } from "react-native"
+import { StyleSheet, View } from "react-native"
 import { moderateScale } from "../../../utilities"
 import { Card, Props } from "./Card"
 

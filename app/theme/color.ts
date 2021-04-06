@@ -25,6 +25,14 @@ export const color = {
    */
   background: palette.offWhite,
   /**
+   * The card background.
+   */
+  cardBackground: palette.white,
+  /**
+   * Light background information.
+   */
+   lightBackground: palette.offWhite,
+  /**
    * The main tinting color.
    */
   primary: palette.sapGreen,

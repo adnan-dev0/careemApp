@@ -1,7 +1,7 @@
 import React from "react"
 import { ImageBackground, StyleSheet, View, Text } from "react-native"
 import { color, typography } from "../../../theme"
-import { moderateScale } from "../../../utilities"
+import { layout, moderateScale } from "../../../utilities"
 
 export type Props = {
   id: string
@@ -13,7 +13,7 @@ export function Card({ id, title, image }: Props) {
   return (
     <View style={styles.container} key={id}>
       <ImageBackground
-        source={{uri:image}}
+        source={{ uri: image }}
         style={styles.image}
         resizeMode="center"
       >
@@ -25,14 +25,23 @@ export function Card({ id, title, image }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: moderateScale(10),
-    width: moderateScale(110),
+    marginBottom: moderateScale(8),
+    width: layout.width / 3 - 14,
     height: moderateScale(90),
-    backgroundColor: color.text,
-    borderRadius: moderateScale(10),
+    backgroundColor: color.cardBackground,
+    borderRadius: moderateScale(5),
+    shadowColor: color.dim,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 1.84,
+
+    elevation: 3,
   },
   image: {
-    width: moderateScale(110),
+    width: layout.width / 3 - 14,
     height: moderateScale(90),
     paddingBottom: moderateScale(5),
     justifyContent: "flex-end",

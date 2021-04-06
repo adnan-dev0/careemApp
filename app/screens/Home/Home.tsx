@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { color } from "../../theme"
 import { moderateScale } from "../../utilities"
-import { CardsSection, Header } from "./components"
+import { CardsSection, Header, BookRideCard } from "./components"
 
 export function Home() {
   const insets = useSafeAreaInsets()
@@ -13,6 +13,7 @@ export function Home() {
     >
       <Header />
       <CardsSection />
+      <BookRideCard />
     </View>
   )
 }
