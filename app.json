@@ -3,6 +3,7 @@
     "owner": "vaansolutions",
     "name": "careemApp",
     "slug": "careemApp",
+    "description": "Careem app is a clone of careem ride hailing app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
