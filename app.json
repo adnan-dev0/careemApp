@@ -1,5 +1,6 @@
 {
   "expo": {
+    "owner": "vaansolutions",
     "name": "careemApp",
     "slug": "careemApp",
     "version": "1.0.0",
