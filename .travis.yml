@@ -19,4 +19,4 @@ jobs:
       script:
         - npm ci
         - npx expo login -u adnan_dev -p y8@An5D!3bL8dvM
-        - npx expo publish --non-interactive
+        - npx expo publish --non-interactive --release-channel development
