@@ -4,7 +4,6 @@ import { Landing, VerifyOtp } from "../screens"
 import { AuthStackParamList } from "./types"
 import { VerifyPhone } from "../screens"
 import { color } from "../theme"
-import { moderateScale } from "../utilities"
 
 const AuthStack = createStackNavigator<AuthStackParamList>()
 

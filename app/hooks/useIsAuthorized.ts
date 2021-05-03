@@ -8,6 +8,7 @@ export function useIsAuthorized() {
         async function checkIsAuthorized() {
             try {
                 const token = await SecureStore.getItem('user_token')
+                // validate token, expiry
                 setIsAuthorized(token ? true : false)
             } catch (error) {
 
