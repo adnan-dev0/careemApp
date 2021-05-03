@@ -19,3 +19,5 @@ jobs:
         - npm ci
         - npx expo login -u adnan_dev -p y8@An5D!3bL8dvM
         - npx expo publish --non-interactive --release-channel development
+        - expo build:android --non-interactive --release-channel deployment -t apk
+        - expo build:ios --non-interactive -t simulator
