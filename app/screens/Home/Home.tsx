@@ -1,20 +1,21 @@
 import React from "react"
-import { StyleSheet, View } from "react-native"
+import { StyleSheet, ScrollView } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { color } from "../../theme"
 import { moderateScale } from "../../utilities"
-import { CardsSection, Header, BookRideCard } from "./components"
+import { CardsSection, Header, BookRideCard, SafetyInfo } from "./components"
 
 export function Home() {
   const insets = useSafeAreaInsets()
   return (
-    <View
+    <ScrollView
       style={[styles.container, { paddingTop: insets.top + moderateScale(10) }]}
     >
       <Header />
       <CardsSection />
+      <SafetyInfo />
       <BookRideCard />
-    </View>
+    </ScrollView>
   )
 }
 

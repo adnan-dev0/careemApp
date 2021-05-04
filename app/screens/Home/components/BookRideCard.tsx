@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
 import { FontAwesome, EvilIcons } from "@expo/vector-icons"
 import { color, typography } from "../../../theme"
 import { moderateScale } from "../../../utilities"
@@ -20,12 +20,12 @@ export function BookRideCard() {
         <EvilIcons name={"search"} color={color.dim} size={moderateScale(20)} />
       </View>
       <View style={styles.tagContainer}>
-        <View style={styles.tags}>
+        <TouchableOpacity style={styles.tags} activeOpacity={0.7}>
           <Text style={styles.tagText}>901 Street 37, F 17/2</Text>
-        </View>
-        <View style={styles.tags}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.tags} activeOpacity={0.7}>
           <Text style={styles.tagText}>901 Street 37, F 17/2</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   )
@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 1.84,
-
     elevation: 3,
   },
   titleText: {
