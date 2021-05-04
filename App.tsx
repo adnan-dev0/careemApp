@@ -29,11 +29,11 @@ export default function App() {
 
   const onLayoutRootView = useCallback(
     async function () {
-      if (appIsReady) {
+      if (appIsReady && isAuthReady) {
         await SplashScreen.hideAsync()
       }
     },
-    [appIsReady]
+    [appIsReady, isAuthReady]
   )
 
   if (!appIsReady || !isAuthReady) return null

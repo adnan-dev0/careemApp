@@ -7,6 +7,7 @@ export function useIsAuthorized() {
     useEffect(() => {
         async function checkIsAuthorized() {
             try {
+                // await SecureStore.removeItem('user_token')
                 const token = await SecureStore.getItem('user_token')
                 // validate token, expiry
                 setIsAuthorized(token ? true : false)
