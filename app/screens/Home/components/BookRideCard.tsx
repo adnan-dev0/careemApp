@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
 import { FontAwesome, EvilIcons } from "@expo/vector-icons"
 import { color, typography } from "../../../theme"
 import { moderateScale } from "../../../utilities"
+import { TextInput } from "react-native-gesture-handler"
 
 export function BookRideCard() {
   return (
@@ -15,7 +16,10 @@ export function BookRideCard() {
             color={color.primary}
             size={moderateScale(10)}
           />
-          <Text style={styles.subText}>Enter your destination</Text>
+          <TextInput
+            style={styles.subText}
+            placeholder={"Enter your destination"}
+          ></TextInput>
         </View>
         <EvilIcons name={"search"} color={color.dim} size={moderateScale(20)} />
       </View>
@@ -62,6 +66,7 @@ const styles = StyleSheet.create({
     paddingLeft: moderateScale(10),
     color: color.dim,
     fontSize: moderateScale(12),
+    flex: 0.9
   },
   leftSearchContainer: {
     flexDirection: "row",
