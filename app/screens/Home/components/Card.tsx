@@ -1,5 +1,5 @@
 import React from "react"
-import { ImageBackground, StyleSheet, View, Text } from "react-native"
+import { ImageBackground, StyleSheet, TouchableOpacity, Text } from "react-native"
 import { color, typography } from "../../../theme"
 import { layout, moderateScale } from "../../../utilities"
 
@@ -11,7 +11,7 @@ export type Props = {
 
 export function Card({ id, title, image }: Props) {
   return (
-    <View style={styles.container} key={id}>
+    <TouchableOpacity style={styles.container} key={id} activeOpacity={0.7}>
       <ImageBackground
         source={{ uri: image }}
         style={styles.image}
@@ -19,7 +19,7 @@ export function Card({ id, title, image }: Props) {
       >
         <Text style={styles.title}>{title}</Text>
       </ImageBackground>
-    </View>
+    </TouchableOpacity>
   )
 }
 

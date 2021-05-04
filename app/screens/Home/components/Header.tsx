@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
   pointsContainer: {
     flexDirection: "row",
     alignItems: "baseline",
-    // justifyContent: "center",
   },
   pointsText: {
     marginHorizontal: moderateScale(5),
